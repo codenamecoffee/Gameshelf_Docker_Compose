@@ -1,13 +1,10 @@
-FROM python:3.11-slim
+FROM 
 
 # Install curl to fetch uv installer
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends curl \
-    && rm -rf /var/lib/apt/lists/*
+RUN 
 
 # Install uv (https://docs.astral.sh/uv/) and add to path
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-ENV PATH="/root/.local/bin:${PATH}"
+RUN
 
 WORKDIR /app
 
