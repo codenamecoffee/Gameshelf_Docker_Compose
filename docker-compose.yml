@@ -1,16 +1,6 @@
 services:
-  api:
-    build: 
-    ports:
-    environment:
-
-  db:
-    image: postgres:15
-    restart: always
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: gameshelf
+  
+  // Definir los contenedores para la app y la base de datos
 
 volumes:
   pgdata:
