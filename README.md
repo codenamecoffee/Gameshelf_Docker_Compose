@@ -50,9 +50,7 @@ The preferred way to run GameShelf is using Docker Compose. This will start both
 If you prefer to run locally without Docker:
 1. Install dependencies:
    ```zsh
-   pip install -r requirements.txt
-   # or
-   poetry install
+   uv sync
    ```
 2. Start a local PostgreSQL instance and set the `DATABASE_URL` environment variable.
 3. Run the app:
