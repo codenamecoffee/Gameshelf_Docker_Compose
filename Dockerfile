@@ -1,25 +1,18 @@
-FROM 
-
-# Install curl to fetch uv installer
-RUN 
-
-# Install uv (https://docs.astral.sh/uv/) and add to path
-RUN
+FROM python:3.11-slim
 
 WORKDIR /app
 
-# Copy project metadata (dependencies) first to leverage Docker layer caching
-COPY 
+RUN apt-get update && apt-get install -y curl && \
+    curl -Ls https://astral.sh/uv/install.sh | sh && \
+    ln -s /root/.local/bin/uv /usr/local/bin/uv
 
-# Install dependencies into a project-local virtual environment (.venv)
-# --frozen uses the lockfile if present;
-RUN 
+COPY pyproject.toml uv.lock ./
 
-# Copy application code
-COPY 
+RUN uv pip compile pyproject.toml > requirements.txt && \
+    uv pip install --system --requirement requirements.txt
 
-# Expose HTTP port
-EXPOSE 
+COPY app/ ./app
 
-# Start the API using uv's runner
-CMD [...]
+EXPOSE 8000
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
