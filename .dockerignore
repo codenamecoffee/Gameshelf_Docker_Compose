@@ -1,0 +1,18 @@
+# Virtual environments (solo los que podrían existir)
+.venv/
+venv/
+
+# Git (no necesario en contenedor)
+.git/
+.gitignore
+
+# Documentation (no necesario en contenedor de producción)
+README.md
+Tarea.md
+
+# Tests (para este proyecto educativo, los mantendremos fuera)
+tests/
+
+# Python cache
+__pycache__/
+*.pyc
