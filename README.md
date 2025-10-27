@@ -1,6 +1,6 @@
 # 🎮 GameShelf
 
-> Educational DevOps project developed during the professional training *"School of Software Engineering"* — focused on containerization, orchestration, and backend development with FastAPI and PostgreSQL.
+> Educational DevOps project developed during the professional training *School of Software Engineering* at Endava Uruguay — focused on containerization, orchestration, and backend development with FastAPI and PostgreSQL.
 
 <br>
 
